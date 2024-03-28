@@ -46,9 +46,9 @@ int init_module(void) {
 
 // Función que se ejecuta al descargar el módulo
 void cleanup_module(void) {
-    // Se borra el dispositivo
+    // Se destruye el dispositivo
     device_destroy(cls, MKDEV(major, 0));
-    // Se borra la clase del dispositivo
+    // Se destruye la clase del dispositivo
     class_destroy(cls);
     // Se desregistra el dispositivo de caracteres
     unregister_chrdev(major, DEVICE_NAME);
